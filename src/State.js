@@ -2,11 +2,13 @@ import React from 'react';
 
 //get user input here and return it
 
-const State = ({returnedData}) =>{
+const State = ({dataNeed, userInfo }) =>{
     return(
         <div>
-            <input onChange={returnedData} placeholder='enter name'/>
-            <input placeholder='enter id' />
+            <p>{dataNeed}:
+            <input 
+            onChange={userInfo}
+            /></p>
         </div>
     )
 }
