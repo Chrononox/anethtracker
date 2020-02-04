@@ -1,5 +1,6 @@
 import React from 'react'
 
+//add old data viewable to the side
 const DataInput = ({title, data, setFunc}) =>{
     return(
         <div className="tc">
@@ -14,4 +15,4 @@ const DataInput = ({title, data, setFunc}) =>{
     )
 }
 
-export default DataInput;
+export default DataInput
