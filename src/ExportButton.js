@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ExportButton = ({ btnName, setFunc}) =>{
+const ExportButton = (props) =>{
     return(
-        <button onClick={setFunc}>{btnName}</button>
+        <button onClick={props.setFunc}>{props.btnName}</button>
     )
 }
 

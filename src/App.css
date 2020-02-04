@@ -1,11 +1,18 @@
 body{
-    
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; */
 }
 
 .inputs {
+    margin-top: 2em;
     border: 1px solid black;
 }
+.tables {
+    border: 1px solid red;
+}
 .btns {
+    padding: 10px 0 10px 0;
     border: 1px solid black;
     text-align: center;
 }
