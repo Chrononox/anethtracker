@@ -4,7 +4,7 @@ import React from 'react'
 const DataInput = ({title, data, setFunc}) =>{
     return(
         <div className="tc">
-            {console.log(`${title} ${data}`)}
+            {/* {console.log(`${title} ${data}`)} */}
             <p>{title} 
                 <input 
                     placeholder={data}
