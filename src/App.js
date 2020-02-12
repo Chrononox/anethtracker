@@ -1,41 +1,57 @@
 import React from 'react';
 import './App.css';
-import DataInput from './DataInput';
-import ExportButton from './ExportButton';
-import Table from './Table';
-import Form from './Form';
-import TestZone from './TestZone';
+import Form from './Components/Form/Form';
 
-//fill in form, form updates state, when you click button run function to save curr states into form and passes states to show last entered values. 
-
-//TODO: ADD PATIENT INFO AS WELL. as footer, require for document creation
-
-//app loads form. stats are currenty in form
+//TODO
 
 class App extends React.Component{
   constructor(){
     super();
     this.state = {
-     test: 'X.X',
+      time: '',
+      hr: '',
+      resp: '',
+      temp: '',
+      spo2: '',
+      co2: '',
+      bp: '',
+      iso: '',
+      ivf: '',
+      ekg: '',
     }
   }
 
-  pushToStats = (event) =>{
-    //get array from form and push to this array.
+  //set the time when button is clicked  use =new Date() https://tecadmin.net/get-current-date-time-javascript/
+  setTime(event){
+    this.setState({time: 'time value'})
+    console.log('in time')
   }
 
-  //add data to form after button click
+  ///Data State Setters.  
+ hr(event){
+    console.log('in HR')
+  }
 
-  //build the form
+  // setHr =   (event) => this.setState({hr: event.target.value})
+  setresp = (event) => this.setState({resp: event.target.value});
+  setTemp = (event) => this.setState({temp: event.target.value});
+  setspo2 = (event) => this.setState({spo2: event.target.value});
+  setco2 =  (event) => this.setState({co2: event.target.value});
+  setbp =   (event) => this.setState({bp: event.target.value});
+  setiso =  (event) => this.setState({iso: event.target.value});
+  setivf =  (event) => this.setState({ivf: event.target.value});
+  setekg =  (event) => this.setState({ekg: event.target.value});
+
  
 
-
-  
-
   render(){
+    
     return(
       <div>
-        <Form />
+        <Form 
+          time={this.state.time} setTime={this.setTime}
+          hr = {this.state.hr} setHr={this.setHr}
+        />
        </div>
     )
   }
