@@ -8,7 +8,7 @@ class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      time: '',
+      currtime: '',
       hr: '',
       resp: '',
       temp: '',
@@ -23,7 +23,7 @@ class App extends React.Component{
   }
 
   //set the time when button is clicked  use =new Date() https://tecadmin.net/get-current-date-time-javascript/
-  setTime(event){
+  setcurrtime(event){
     this.setState({time: 'time value'})
     console.log('in time')
   }
@@ -35,7 +35,7 @@ class App extends React.Component{
 
   // setHr =   (event) => this.setState({hr: event.target.value})
   setresp = (event) => this.setState({resp: event.target.value});
-  setTemp = (event) => this.setState({temp: event.target.value});
+  settemp = (event) => this.setState({temp: event.target.value});
   setspo2 = (event) => this.setState({spo2: event.target.value});
   setco2 =  (event) => this.setState({co2: event.target.value});
   setbp =   (event) => this.setState({bp: event.target.value});
@@ -49,6 +49,7 @@ class App extends React.Component{
     
     return(
       <div>
+        <h1>Yo</h1>
         <div className='ptinfo'>
           {/* <Ptinfo /> */}
         </div>
@@ -56,9 +57,11 @@ class App extends React.Component{
           {/* <Table /> */}
         </div>
         <div className='form'>
-          <Form 
+          <Form
+            time ={this.state.time} setcurrtime={this.setcurrtime}
+            resp={this.state.resp} setresp={this.setresp}
             
-          />{this.props.children}
+          />
         </div>
       </div>
     )
