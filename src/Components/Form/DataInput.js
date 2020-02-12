@@ -13,5 +13,4 @@ const DataInput = ({title, data, setFunc}) =>{
         </div>
     )
 }
-
 export default DataInput
