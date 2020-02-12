@@ -50,13 +50,15 @@ class App extends React.Component{
     return(
       <div>
         <div className='ptinfo'>
-
+          {/* <Ptinfo /> */}
         </div>
         <div className='table'>
-          
+          {/* <Table /> */}
         </div>
         <div className='form'>
-
+          <Form 
+            
+          />{this.props.children}
         </div>
       </div>
     )

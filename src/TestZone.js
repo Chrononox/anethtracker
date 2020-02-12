@@ -1,15 +1,13 @@
 import React from 'react';
 
-class TestZone extends React.Component{
-    constructor(props){
-        super(props)
-    }
+const TestZone = ({ test }) =>{
+    return(
+        <div>
+            <h1>Test Zone</h1>
+            <p>{test}</p>
+        </div>
 
-    render(){
-        return(
-            <h2>Test: {this.props.test}</h2>
-        )
-    }
+    )
 }
 
 export default TestZone;
