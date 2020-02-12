@@ -18,6 +18,7 @@ class App extends React.Component{
       iso: '',
       ivf: '',
       ekg: '',
+      test: 'O.O',
     }
   }
 
@@ -48,11 +49,16 @@ class App extends React.Component{
     
     return(
       <div>
-        <Form 
-          time={this.state.time} setTime={this.setTime}
-          hr = {this.state.hr} setHr={this.setHr}
-        />
-       </div>
+        <div className='ptinfo'>
+
+        </div>
+        <div className='table'>
+          
+        </div>
+        <div className='form'>
+
+        </div>
+      </div>
     )
   }
 }

@@ -3,13 +3,11 @@ import React from 'react';
 class TestZone extends React.Component{
     constructor(props){
         super(props)
-
-        console.log({props})
     }
 
     render(){
         return(
-            <h2>{this.props.test}</h2>
+            <h2>Test: {this.props.test}</h2>
         )
     }
 }
