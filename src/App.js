@@ -21,10 +21,12 @@ class App extends React.Component{
       iso: '0.0',
       ivf: '00',  //display in ml/hr
       ekg: 'NNN',
+      displayArray: [],
     }
   }
 
   //setState functions for vitals(form)
+  settime =(event) => this.setState({time: event.target.value})
   sethr  = (event) => this.setState({hr: event.target.value})
   setresp =(event) => this.setState({resp: event.target.value})
   settemp =(event) => this.setState({temp: event.target.value})
@@ -33,11 +35,25 @@ class App extends React.Component{
   setbp =(event) => this.setState({bp: event.target.value})
   setiso =(event) => this.setState({iso: event.target.value})
   setivf =(event) => this.setState({ivf: event.target.value})
-  setekg =(event) => this.setState({ekg: event.target.value})
+  setekg =(event) => this.setState({ekg: event.target.value.toUpperCase()})
 
   //set values to an array for storage
   setToArray=()=>{
-    console.log('setting to array')
+    let tempArray = [];
+    let temp = this.state;
+    for (const stat in temp){
+      // console.log(`${stat}: ${temp[stat]}`)
+      if(stat === 'displayArray'){
+
+      }else{
+        tempArray.push(temp[stat]);
+      }
+      
+    }
+    this.state.displayArray.push(tempArray);
+    console.log(this.state.displayArray);
+    
+  
   }
 
   render(){
@@ -46,7 +62,7 @@ class App extends React.Component{
         <div>
           {/* previous readings */}
         </div>
-        <div className='center ba bw2 b--navy br4 mw5 pa3'>
+        <div className='center ba bw2 b--navy br4 mw5 pa3 bg-silver'>
           <Form className='center' 
             hr={this.state.hr} sethr={this.sethr}
             resp={this.state.resp} setresp={this.setresp}
