@@ -1,42 +1,84 @@
 import React from 'react';
 import './App.css';
-import State from './State';
-import DisplayState from './DisplayState';
+import Form from './Components/Form/Form'
+import Button from './Components/Button/Button'
+
+
+
 
 class App extends React.Component{
+  
   constructor(){
     super();
     this.state = {
-      name: '',
-      id: '',
-      pet: ''
+      time: '00:00',
+      hr: '000',
+      resp: '00',
+      temp: '00.0',
+      spo2: '00', //display as %
+      co2: '00',
+      bp: '000/00 (000)', //may break up bp to three parts
+      iso: '0.0',
+      ivf: '00',  //display in ml/hr
+      ekg: 'NNN',
+      displayArray: [],
     }
   }
 
-  returnedData = (event) =>{
-    this.setState({name: event.target.value})
-  }
-  returnedID = (event) =>{
-    this.setState({id: event.target.value})
-  }
-  returnedPet = (event) =>{
-    this.setState({pet: event.target.value})
+  //setState functions for vitals(form)
+  settime =(event) => this.setState({time: event.target.value})
+  sethr  = (event) => this.setState({hr: event.target.value})
+  setresp =(event) => this.setState({resp: event.target.value})
+  settemp =(event) => this.setState({temp: event.target.value})
+  setspo2 =(event) => this.setState({spo2: event.target.value})
+  setco2 =(event) => this.setState({co2: event.target.value})
+  setbp =(event) => this.setState({bp: event.target.value})
+  setiso =(event) => this.setState({iso: event.target.value})
+  setivf =(event) => this.setState({ivf: event.target.value})
+  setekg =(event) => this.setState({ekg: event.target.value.toUpperCase()})
+
+  //set values to an array for storage
+  setToArray=()=>{
+    let tempArray = [];
+    let temp = this.state;
+    for (const stat in temp){
+      // console.log(`${stat}: ${temp[stat]}`)
+      if(stat === 'displayArray'){
+
+      }else{
+        tempArray.push(temp[stat]);
+      }
+      
+    }
+    this.state.displayArray.push(tempArray);
+    console.log(this.state.displayArray);
+    
+  
   }
 
   render(){
     return(
       <div>
-        <h1>Hallow</h1>
-        <State dataNeed={'Username'} userInfo={this.returnedData}/>
-        <State dataNeed={'ID'} userInfo={this.returnedID}/>
-        <State dataNeed={'Pet'} userInfo={this.returnedPet}/>
+        <div>
+          {/* previous readings */}
+        </div>
+        <div className='center ba bw2 b--navy br4 mw5 pa3 bg-silver'>
+          <Form className='center' 
+            hr={this.state.hr} sethr={this.sethr}
+            resp={this.state.resp} setresp={this.setresp}
+            temp={this.state.temp} settemp={this.settemp}
+            spo2={this.state.spo2} setspo2={this.setspo2}
+            co2={this.state.co2} setco2={this.setco2}
+            bp= {this.state.bp} setbp={this.setbp}
+            iso={this.state.iso} setiso={this.setiso}
+            ivf={this.state.ivf} setivf={this.setivf}
+            ekg={this.state.ekg} setekg={this.setekg}
+          />
+          <Button setToArray={this.setToArray}/>
+        </div>
         
-        <DisplayState
-          name={this.state.name}
-          id={this.state.id}
-          pet={this.state.pet}
-         />
       </div>
+      
     )
   }
 }
