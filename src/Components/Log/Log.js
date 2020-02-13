@@ -5,7 +5,14 @@ const Log = ({ displayArray }) =>{
 
     //to build table and display data called after hittng Submit to record button
     const newTable = (arr, index) =>{
-       
+       return( arr.map(subArr =>{
+           
+           return subArr.map((num, index)=>{
+                return(
+                    <td key={index}>{num}</td>
+                )
+            })
+        }))
   }
 
 
@@ -30,7 +37,7 @@ const Log = ({ displayArray }) =>{
                         <th>EKG<br/> RYTHYM</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id='tablebody'>
                     <tr>
                         {displayTable}
                     </tr>
