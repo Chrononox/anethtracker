@@ -55,7 +55,7 @@ class App extends React.Component{
     this.makeUpdate();
   }
 
-  //reset forms with last data NOT WORKING
+  //reset forms with recent data as placeholder NOT WORKING maybe no place holder data to reduce confusion
   makeUpdate=()=>{
     this.setState(this.state);
   }
@@ -64,7 +64,7 @@ class App extends React.Component{
     return(
       <div className="flex justify-center">
         <div className='ba bw2 b--navy br4  pa3 bg-silver'>
-          <Log />
+          <Log displayArray={this.state.displayArray}/>
         </div>
         <div className='ba bw2 b--navy br4 mw5 pa3 bg-silver'>
           <Form className='center' 

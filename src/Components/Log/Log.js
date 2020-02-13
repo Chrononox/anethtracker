@@ -1,15 +1,16 @@
 import React from 'react';
 import './Log.css'
 
-const Log = () =>{
+const Log = ({ displayArray }) =>{
 
-    //to build table and display data
-    const tableBuilder = () =>{
-        const data = [10,5,8,4]
-        data.map(num =>{
-            return <td>{num}</td>
-        })
-    }
+    //to build table and display data called after hittng Submit to record button
+    const newTable = (arr, index) =>{
+       
+  }
+
+
+    //gets newTable to the body of the page
+    const displayTable = newTable(displayArray);
 
     return (
         <div>
@@ -31,8 +32,9 @@ const Log = () =>{
                 </thead>
                 <tbody>
                     <tr>
-                      {/* //table builder component? */}
-                      </tr>
+                        {displayTable}
+                    </tr>
+                  
                 </tbody>
             </table>
         </div>
