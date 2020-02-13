@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Form from './Components/Form/Form'
 import Button from './Components/Button/Button'
+import Log from './Components/Log/Log'
 
 
 
@@ -44,25 +45,22 @@ class App extends React.Component{
     for (const stat in temp){
       // console.log(`${stat}: ${temp[stat]}`)
       if(stat === 'displayArray'){
-
+        //dont do nuffin with this. Probebly can be done nicer later.
       }else{
         tempArray.push(temp[stat]);
       }
-      
     }
     this.state.displayArray.push(tempArray);
     console.log(this.state.displayArray);
-    
-  
   }
 
   render(){
     return(
-      <div>
-        <div>
-          {/* previous readings */}
+      <div className="flex justify-center">
+        <div className='ba bw2 b--navy br4  pa3 bg-silver'>
+          <Log />
         </div>
-        <div className='center ba bw2 b--navy br4 mw5 pa3 bg-silver'>
+        <div className='ba bw2 b--navy br4 mw5 pa3 bg-silver'>
           <Form className='center' 
             hr={this.state.hr} sethr={this.sethr}
             resp={this.state.resp} setresp={this.setresp}
