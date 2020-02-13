@@ -52,6 +52,12 @@ class App extends React.Component{
     }
     this.state.displayArray.push(tempArray);
     console.log(this.state.displayArray);
+    this.makeUpdate();
+  }
+
+  //reset forms with last data NOT WORKING
+  makeUpdate=()=>{
+    this.setState(this.state);
   }
 
   render(){

@@ -5,7 +5,10 @@ const Log = () =>{
 
     //to build table and display data
     const tableBuilder = () =>{
-        
+        const data = [10,5,8,4]
+        data.map(num =>{
+            return <td>{num}</td>
+        })
     }
 
     return (
@@ -28,8 +31,8 @@ const Log = () =>{
                 </thead>
                 <tbody>
                     <tr>
-                      
-                    </tr>
+                      {/* //table builder component? */}
+                      </tr>
                 </tbody>
             </table>
         </div>
