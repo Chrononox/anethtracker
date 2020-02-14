@@ -4,21 +4,22 @@ import './Log.css'
 const Log = ({ displayArray }) =>{
 
     //to build table and display data called after hittng Submit to record button
-    const newTable = (arr, index) =>{
-       return( arr.map(subArr =>{
-           
-           return subArr.map((num, index)=>{
-                return(
-                    <td key={index}>{num}</td>
-                )
-            })
-        }))
-  }
-
+const newTable = (arr) =>{
+    return(
+        <tr>
+            {arr.map(subArr =>{
+                return subArr.map((num, index)=>{
+                    return <td key={index}>{num}</td>
+                })
+            })}
+        </tr>
+    )
+}
 
     //gets newTable to the body of the page
     const displayTable = newTable(displayArray);
 
+    //displayed
     return (
         <div>
             <h2>Intra-Op Vital Signs</h2>
@@ -38,9 +39,9 @@ const Log = ({ displayArray }) =>{
                     </tr>
                 </thead>
                 <tbody id='tablebody'>
-                    <tr>
+                   
                         {displayTable}
-                    </tr>
+                    
                   
                 </tbody>
             </table>
